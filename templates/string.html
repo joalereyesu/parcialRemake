@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="../style.css">
+        <title>Form</title>
+        <style>
+          .avatar {
+            vertical-align: middle;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+          }
+          .container{
+            display: flex;
+            height: 90vh;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10vh !important;
+          }
+    
+          .row{
+            min-height: 150px;
+          }
+          .rounded {
+            flex: none;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px  rgb(163, 34, 34);
+            border-style: solid;
+          }
+          ul {
+            list-style-type: none;
+          }
+          .border{
+            border-style: solid;
+            border-color: #007BFF;
+            text-align: center;
+            width: 400px;
+          }
+          h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif
+          }
+        </style>
+    </head>
+    <body style="padding: 4vh;">
+        <div class="container shadow-lg">
+          <img class = "rounded" src = "/static/avatar.png" alt = "avatar"> <br>
+          <h1>WEB STRING HANDLER</h1>
+            <form action=" ">
+                <div class="col-md-4 mb-3" style = "display: block; margin-left: auto; margin-right: auto">
+                  <input name="texto" type="text" class="form-control" id="validationCustom02" placeholder="Enter string">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" style = "display: block; margin-left: auto; margin-right: auto">Handle</button>
+            </form>
+            <div style = "display: block; margin-left: auto; margin-right: auto">
+              <ul>
+                <br>
+                {% for name, result in modified.items() %}
+                    <li class = "border">
+                    <b>{{name}} :</b> {{result}}
+                    </li>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>
